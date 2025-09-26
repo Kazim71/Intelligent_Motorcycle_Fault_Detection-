@@ -4,16 +4,45 @@
 [![Machine Learning](https://img.shields.io/badge/ML-Scikit--Learn-orange.svg)](https://scikit-learn.org/)
 [![Audio Processing](https://img.shields.io/badge/Audio-Librosa-green.svg)](https://librosa.org/)
 [![License](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
+[![Phase](https://img.shields.io/badge/Phase-1%20Complete-brightgreen.svg)](PHASE1_SETUP.md)
+
+## 🚀 Phase 1 - Data Pipeline Rebuild Complete!
+
+**Latest Update**: Phase 1 comprehensive rebuild with advanced EDA, feature extraction, and data augmentation pipeline.
+
+> **🎯 Quick Start**: See [PHASE1_SETUP.md](PHASE1_SETUP.md) for detailed setup instructions and usage guide.
 
 ## 🎯 Project Overview
 
 This project introduces an intelligent fault detection system for motorcycles that leverages machine learning techniques on engine acoustic signals, enabling non-intrusive and efficient diagnosis. The system captures audio signals from a running motorcycle and processes them using advanced audio feature extraction techniques to accurately classify engine conditions and detect potential faults.
 
-## 🏆 Project Team
+## 🆕 Phase 1 Features (Recently Implemented)
 
-**Academic Year: 2024-2025**  
-**Department of Electronics and Communication Engineering**  
-**Bharati Vidyapeeth (Deemed to be University) College of Engineering, Pune**
+### 1. 📊 Comprehensive Exploratory Data Analysis
+- **Class Distribution Analysis**: Visual and statistical analysis of fault categories
+- **Audio Visualization**: Waveforms and mel-spectrograms for each fault type
+- **Statistical Profiling**: Duration, amplitude, energy analysis per category
+- **Imbalance Detection**: Automatic identification of dataset imbalances
+
+### 2. 🎵 Advanced Feature Extraction Pipeline
+- **MFCC Features**: 20 coefficients with statistical measures (mean, variance, skewness, kurtosis)
+- **Mel-Spectrogram**: 128 mel bands with comprehensive statistics
+- **Spectral Features**: Centroid, bandwidth, rolloff, contrast, flatness with temporal statistics
+- **Chromagram**: 12 chroma bins for harmonic content analysis
+- **Temporal Features**: Zero-crossing rate, RMS energy, tempo, beat tracking
+- **Tonnetz Features**: Tonal centroid representation (6 dimensions)
+- **Advanced Features**: Signal energy, spectral entropy, harmonic/percussive ratios
+- **Total**: 600+ features per audio file
+
+### 3. 🔄 Data Augmentation & Noise Handling
+- **Gaussian Noise Addition**: Variable SNR levels (10-30 dB)
+- **Time Stretching**: Speed variations (0.8x - 1.2x) without pitch change
+- **Pitch Shifting**: ±2 semitones for tonal variations
+- **Room Impulse Response**: Simulates different acoustic environments
+- **Dynamic Range Compression**: Professional audio processing
+- **Advanced Noise Reduction**: Using spectral subtraction and noisereduce library
+- **Dataset Expansion**: 4x augmentation factor for improved generalization
+
 
 ### Team Members
 - **Mohammad Kazim** (PRN: 2114110466) - Project Lead & System Integration
@@ -93,19 +122,41 @@ Audio Signal → Noise Filtering → MFCC Extraction → Model Training → Faul
 ```bash
 Python 3.8+
 pip package manager
-Microphone for audio input
+Audio dataset (.wav files)
 ```
 
-### Dependencies
+### Phase 1 Quick Setup
 ```bash
-pip install numpy pandas librosa scikit-learn matplotlib seaborn
+# Clone the repository
+git clone https://github.com/Kazim71/Intelligent_Motorcycle_Fault_Detection-.git
+cd Intelligent_Motorcycle_Fault_Detection-
+
+# Install dependencies
+pip install -r requirements.txt
+
+# Optional: Advanced noise reduction
+pip install noisereduce
+
+# Run Phase 1 Pipeline
+python run_phase1.py --dataset_path ./data/raw/
 ```
 
-### Quick Start
-1. Clone the repository
-2. Install dependencies
-3. Run the main classification script
-4. Input motorcycle audio for analysis
+### Project Structure (Phase 1)
+```
+├── src/                           # Source code
+│   ├── 01_exploratory_data_analysis.py
+│   ├── 02_advanced_feature_extraction.py
+│   └── 03_data_augmentation_noise_handling.py
+├── data/                          # Data directories
+│   ├── raw/                       # Original audio files
+│   ├── processed/                 # Extracted features
+│   └── augmented/                 # Augmented dataset  
+├── eda/                          # EDA outputs
+├── models/                       # Trained models (Phase 2)
+├── run_phase1.py                 # Main Phase 1 pipeline
+├── requirements.txt              # Python dependencies
+└── PHASE1_SETUP.md              # Detailed setup guide
+```
 
 ## 📈 Results & Performance
 
@@ -226,5 +277,3 @@ For questions, suggestions, or collaboration opportunities:
 ---
 
 **Note**: This project represents a significant step toward integrating AI-based diagnostics into two-wheeler maintenance ecosystems and demonstrates the practical application of machine learning in automotive engineering.
-
-*Developed with ❤️ by the ECE Department, Bharati Vidyapeeth College of Engineering, Pune*

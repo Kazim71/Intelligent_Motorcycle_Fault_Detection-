@@ -1,0 +1,38 @@
+# Intelligent Motorcycle Fault Detection - Phase 1 Requirements
+# Authors: Mohammad Kazim, Aryan Gupta, Faiz Maqsood
+
+# Core Data Science Libraries
+numpy>=1.21.0
+pandas>=1.3.0
+scipy>=1.7.0
+
+# Audio Processing
+librosa>=0.9.0
+soundfile>=0.10.0
+pydub>=0.25.0
+
+# Machine Learning
+scikit-learn>=1.0.0
+joblib>=1.0.0
+
+# Visualization
+matplotlib>=3.5.0
+seaborn>=0.11.0
+plotly>=5.0.0
+
+# Progress Bars and Utilities
+tqdm>=4.62.0
+
+# Noise Reduction (Optional - install if needed)
+noisereduce>=2.0.0
+
+# Jupyter Notebook Support (Optional)
+jupyter>=1.0.0
+ipykernel>=6.0.0
+
+# Additional Utilities
+pathlib2>=2.3.0
+
+# For advanced signal processing
+pyworld>=0.3.0
+python_speech_features>=0.6.0
